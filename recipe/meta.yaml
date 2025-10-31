@@ -12,8 +12,7 @@ source:
 
 build:
   number: {{ number }}
-  script: build_output.sh   # [linux]
-  script: build_output.bat  # [win]
+  skip: true  # [osx]
 
 requirements:
   host:
