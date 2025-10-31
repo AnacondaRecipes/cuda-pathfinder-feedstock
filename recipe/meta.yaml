@@ -32,14 +32,14 @@ test:
     - pip check
 
 about:
-  homepage: https://nvidia.github.io/cuda-python/cuda-pathfinder/latest/
+  home: https://nvidia.github.io/cuda-python/cuda-pathfinder
   summary: Utilities for locating CUDA components in a Python virtual environment
   description: |
     Public API for loading NVIDIA Dynamic Libraries
   license: Apache-2.0
   license_file: cuda_pathfinder/LICENSE
-  documentation: https://nvidia.github.io/cuda-python/cuda-pathfinder/latest/
-  repository: https://github.com/NVIDIA/cuda-python/tree/main/cuda_pathfinder
+  doc_url: https://nvidia.github.io/cuda-python/cuda-pathfinder
+  dev_url: https://github.com/NVIDIA/cuda-python/tree/main/cuda_pathfinder
 
 extra:
   recipe-maintainers:
