@@ -30,6 +30,8 @@ test:
     - cuda.pathfinder
   commands:
     - pip check
+    - python -c "from cuda.pathfinder import SUPPORTED_NVIDIA_LIBNAMES as _cvar; print(_cvar)"
+    - python -c "from cuda.pathfinder import LoadedDL; print(dir(LoadedDL))"
 
 about:
   home: https://nvidia.github.io/cuda-python/cuda-pathfinder
