@@ -1,0 +1,54 @@
+{% set name = 'cuda-pathfinder' %}
+{% set number = 0 %}
+{% set version = '1.1.0' %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/NVIDIA/cuda-python/releases/download/{{ name }}-v{{ version }}/cuda-python-{{ name }}-v{{ version }}.tar.gz
+  sha256: 7784a99f24efff5a3c097b9b8d7ccf71dc710a7c9ee9f78ac0084cbb38668b57
+
+build:
+  number: {{ number }}
+  skip: true  # [osx]
+
+requirements:
+  host:
+    - python
+    - pip
+    - setuptools
+  run:
+    - python
+    - cuda-version >=11.0,<14
+
+test:
+  requires:
+    - pip
+  imports:
+    - cuda.pathfinder
+  commands:
+    - pip check
+    - python -c "from cuda.pathfinder import __version__; print(__version__)"
+    - python -c "from cuda.pathfinder import SUPPORTED_NVIDIA_LIBNAMES as _cvar; print(_cvar)"
+    - python -c "from cuda.pathfinder import LoadedDL; print(dir(LoadedDL))"
+
+about:
+  home: https://nvidia.github.io/cuda-python/cuda-pathfinder
+  summary: Utilities for locating CUDA components in a Python virtual environment
+  description: |
+    Public API for loading NVIDIA Dynamic Libraries
+  license: Apache-2.0
+  license_file: cuda_pathfinder/LICENSE
+  doc_url: https://nvidia.github.io/cuda-python/cuda-pathfinder
+  dev_url: https://github.com/NVIDIA/cuda-python/tree/main/cuda_pathfinder
+
+extra:
+  recipe-maintainers:
+    - conda-forge/cuda-python
+    - rwgk
+    - leofang
+    - kkraus14
+    - oleksandr-pavlyk
+    - bdice
