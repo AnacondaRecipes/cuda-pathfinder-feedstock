@@ -1,6 +1,6 @@
-{% set name = 'cuda-pathfinder' %}
+{% set name = "cuda-pathfinder" %}
 {% set number = 0 %}
-{% set version = '1.5.2' %}
+{% set version = "1.5.3" %}
 
 package:
   name: {{ name|lower }}
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://github.com/NVIDIA/cuda-python/releases/download/{{ name }}-v{{ version }}/cuda-python-{{ name }}-v{{ version }}.tar.gz
-  sha256: bd43b928fa3b8b9a42c5896ccdd35bc80a36becc36bf4644d8a4050e35d9be13
+  sha256: 76e293a96c0569188bf345cc2891e474acddb3c69d21ef248e664e7e3dd385a2
 
 build:
-  number: {{ number }}
+  number: 0
   skip: true  # [py<310 or osx]
 
 requirements:
@@ -38,7 +38,7 @@ test:
 
 about:
   home: https://nvidia.github.io/cuda-python/cuda-pathfinder
-  summary: 'cuda.pathfinder: Utilities for locating CUDA components in a Python virtual environment'
+  summary: "cuda.pathfinder: Utilities for locating CUDA components in a Python virtual environment"
   description: |
     Public API for loading NVIDIA Dynamic Libraries
   license: Apache-2.0
