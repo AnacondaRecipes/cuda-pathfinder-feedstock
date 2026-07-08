@@ -1,6 +1,6 @@
 {% set name = "cuda-pathfinder" %}
 {% set number = 0 %}
-{% set version = "1.5.5" %}
+{% set version = "1.5.6" %}
 
 package:
   name: {{ name|lower }}
@@ -8,19 +8,19 @@ package:
 
 source:
   url: https://github.com/NVIDIA/cuda-python/releases/download/{{ name }}-v{{ version }}/cuda-python-{{ name }}-v{{ version }}.tar.gz
-  sha256: 65cfd1a89cd0691cc9d7bfab6cf0e5b47a05e89a3e4c5de83416917159d7ff7f
+  sha256: 631721369901840c790ee0baf762fd5b17d989e40eacc97a5aa7a3ad9459108a
 
 build:
-  number: {{ number }}
-  skip: true  # [py<310 or osx]
+  number: 0
+  skip: true  # [py<39 or osx]
 
 requirements:
   host:
     - python
     - pip
-    - setuptools >=80.0.0
-    - setuptools-scm >=8
-    - wheel
+    - setuptools >=77.0.0
+    - setuptools-scm
+    - packaging
   run:
     - python
     - cuda-version >=12.0,<14
