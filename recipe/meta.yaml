@@ -12,15 +12,15 @@ source:
 
 build:
   number: 0
-  skip: true  # [py<39 or osx]
+  skip: true  # [py<310 or osx]
 
 requirements:
   host:
     - python
     - pip
-    - setuptools >=77.0.0
-    - setuptools-scm
-    - packaging
+    - setuptools >=80.0.0
+    - setuptools-scm >=8,!=10.1
+    - wheel
   run:
     - python
     - cuda-version >=12.0,<14
