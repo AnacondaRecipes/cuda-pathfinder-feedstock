@@ -1,6 +1,5 @@
 {% set name = "cuda-pathfinder" %}
-{% set number = 0 %}
-{% set version = "1.8.1" %}
+{% set version = "1.8.2" %}
 
 package:
   name: {{ name }}
@@ -8,7 +7,7 @@ package:
 
 source:
   url: https://github.com/NVIDIA/cuda-python/releases/download/{{ name }}-v{{ version }}/cuda-python-{{ name }}-v{{ version }}.tar.gz
-  sha256: 8ee93ef37d0023311bbc42905a51676f49e13704ad8c9d924b3f93ceaa6d90f7
+  sha256: f6f54318c78821bdc5fd624b5a9029a1abd71d61f169b316e9e31b789caf2ba8
 
 build:
   number: 0
@@ -48,6 +47,8 @@ about:
   dev_url: https://github.com/NVIDIA/cuda-python/tree/main/cuda_pathfinder
 
 extra:
+  skip-lints:
+    - deprecate_license_url
   recipe-maintainers:
     - conda-forge/cuda-python
     - rwgk
