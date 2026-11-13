@@ -1,4 +1,5 @@
 #!/bin/bash
+set -exuo pipefail
 
 # Release archives do not contain .git metadata; provide the exact version
 # so setuptools-scm can still generate cuda/pathfinder/_version.py.
