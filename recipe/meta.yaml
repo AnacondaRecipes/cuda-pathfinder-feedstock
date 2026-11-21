@@ -1,5 +1,6 @@
 {% set name = "cuda-pathfinder" %}
-{% set version = "1.9.0" %}
+{% set version = "1.9.1" %}
+{% set sha256 = "2295c85f60c3f63f3fd1c798f178b59ae9dd452a9b9e84608c3e00f5660c7e55" %}
 
 package:
   name: {{ name }}
@@ -7,7 +8,7 @@ package:
 
 source:
   url: https://github.com/NVIDIA/cuda-python/releases/download/{{ name }}-v{{ version }}/cuda-python-{{ name }}-v{{ version }}.tar.gz
-  sha256: 24ee98aafc44258fe81d45a34c6584d1088775b152b5f1d07cdb66a1578b52ee
+  sha256: {{ sha256 }}
 
 build:
   number: 0
